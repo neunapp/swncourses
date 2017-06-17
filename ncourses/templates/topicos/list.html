@@ -1,0 +1,24 @@
+{% extends "topicos/base_topicos.html" %}
+
+{% load thumbnail %}
+
+{% load l10n %}
+
+{% block title %}
+  Cursos online Ademmy
+{% endblock %}
+
+{% block description %}
+  Cursos onlyne ademmy
+{% endblock %}
+
+{% block content %}
+
+  <h1>Temas del curso</h1>
+  {% for t in temas %}
+    <p>{{t}}</p>
+
+  {% endfor %}
+
+
+{% endblock %}

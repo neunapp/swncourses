@@ -1,0 +1,25 @@
+{% extends "home/base_home.html" %}
+
+{% load thumbnail %}
+
+{% load l10n %}
+
+{% block title %}
+  Cursos online Ademmy
+{% endblock %}
+
+{% block description %}
+  Cursos onlyne ademmy
+{% endblock %}
+
+{% block content %}
+
+  <h1>Lista de Cursos mas Visitados</h1>
+  {% for c in cursos %}
+    <p>{{ c.name }}</p>
+    <a href="{% url 'topicos_app:topicos-by_course' c.category c.slug %}">Temas del curso</a>
+    <a href="{% url 'cursos_app:course-detail' c.category c.slug %}">Ver Curso</a>
+  {% endfor %}
+
+
+{% endblock %}

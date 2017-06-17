@@ -1,0 +1,29 @@
+{% extends "home/base_home.html" %}
+
+{% load thumbnail %}
+
+{% load l10n %}
+
+{% block title %}
+  Cursos online Ademmy
+{% endblock %}
+
+{% block description %}
+  Cursos onlyne ademmy
+{% endblock %}
+
+{% block content %}
+
+  <h1>Lista de Cursos mas Visitados</h1>
+  <p>
+    {{object}}
+  </p>
+  <h2>temas de curso</h2>
+  {% for t in temas %}
+    <p>{{ t.name }}</p>
+  {% endfor %}
+  <h2>Docente</h2>
+  <p>{{object.teacher}}</p>
+
+
+{% endblock %}
