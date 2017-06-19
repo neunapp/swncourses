@@ -57,9 +57,8 @@ class Course(TimeStampedModel):
         verbose_name='imagen_curso'
     )
     image_url = models.URLField(blank=True)
-    description_short = RichTextUploadingField(
+    description_short = models.TextField(
         'Descripcion corta',
-        null=True,
         blank=True,
     )
     description_large = RichTextUploadingField(

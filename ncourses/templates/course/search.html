@@ -1,0 +1,40 @@
+{% extends "home/base_home.html" %}
+
+{% load thumbnail %}
+
+{% load l10n %}
+
+{% block title %}
+  Cursos online Ademmy
+{% endblock %}
+
+{% block description %}
+  Cursos onlyne ademmy
+{% endblock %}
+
+{% block content %}
+
+<div class="form-search">
+  <form method="get">{% csrf_token %}
+    <div class="">
+      {{form.kword}}
+      <input type="submit" name="" value="Buscar">
+    </div>
+  </form>
+  <div class="">
+    {% for categoria in categorys  %}
+      <a href="#">{{categoria.name}}</a>
+    {% endfor %}
+  </div>
+  <div class="">
+    <h1>Lista de resultados</h1>
+    {% for c in courses %}
+      <p>{{c.name}}</p>
+    {% endfor %}
+    <h2>Cursos que tambien te pueden interesar</h2>
+    {% for oc in other_courses  %}
+      <p>{{oc.name}}</p>
+    {% endfor %}
+  </div>
+</div>
+{% endblock %}
