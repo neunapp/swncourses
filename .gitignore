@@ -107,6 +107,8 @@ ncourses/applications/home/migrations/*
 
 ncourses/applications/miscelanea/migrations/*
 
+ncourses/applications/matriculas/migrations/*
+
 ncourses/applications/topicos/migrations/*
 
 ncourses/applications/users/migrations/*
