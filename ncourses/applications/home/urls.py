@@ -12,4 +12,10 @@ urlpatterns = [
         views.IndexView.as_view(),
         name='index'
     ),
+
+    url(
+        r'^templates/$',
+        views.HomeView.as_view(),
+        name='templates'
+    ),
 ]
