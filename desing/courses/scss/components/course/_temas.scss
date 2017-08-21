@@ -1,0 +1,35 @@
+.temas-title {
+  margin: {
+    top: 1em;
+    bottom: 2em;
+  };
+  color: color(tercero);
+  font-weight: bold;
+  font-size: 1.3em;
+}
+
+.tema-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid;
+  border-color: color(tercero);
+  margin-bottom: 1em;
+  &__name{
+    color: color(tercero);
+    font-weight: bold;
+    font-size: 0.9em;
+  }
+  &__min{
+    background: color(tercero);
+    font-size: 0.7em;
+    padding: {
+      left: 0.5em;
+      right: 0.5em;
+      top: 0.2em;
+      bottom: 0.2em;
+    };
+    border-radius: 10px;
+    color: color(blanco);
+  }
+}

@@ -1,0 +1,92 @@
+.course-presentation{
+  background: color(segundo);
+  padding: 3em;
+  @include hasta(620px){
+    padding: 1em;
+  };
+}
+
+.course-copy {
+  padding-right: 2em;
+  @include hasta(620px){
+    padding-right: 0px;
+  };
+  &__title{
+    color: color(blanco);
+    font-size: 2em;
+    font-weight: bold;
+    @include hasta(620px){
+      font-size: 1.2em;
+      text-align: center;
+    };
+  }
+  &__description{
+    text-align: left;
+    color: #F5F5F5;
+    @include hasta(620px){
+      font-size: 0.8em;
+    };
+  }
+}
+
+.course-price {
+  display: flex;
+  justify-content: center;
+  &__monto{
+    margin: {
+      left: 1em;
+      right: 1em;
+    };
+    background: color(primero);
+    color: color(blanco);
+    padding: {
+      top: 0.5em;
+      bottom: 0.5em;
+      left: 2em;
+      right: 2em;
+    };
+  }
+  &__etiqueta{
+    margin: {
+      left: 1em;
+      right: 1em;
+    };
+    background: color(tercero);
+    color: color(blanco);
+    padding: {
+      top: 0.5em;
+      bottom: 0.5em;
+      left: 2em;
+      right: 2em;
+    };
+  }
+}
+
+.course-btn {
+  display: flex;
+  justify-content: center;
+  margin-top: 2em;
+  margin-bottom: 2em;
+  &__link{
+    border-radius: 5px;
+    color: color(blanco);
+    background: #f44336;
+    padding: {
+      left: 2em;
+      right: 2em;
+      top: 0.6em;
+      bottom: 0.6em;
+    };
+    &:hover{
+      color: color(blanco);
+      background: #e53935;
+    }
+  }
+}
+
+.course-video{
+  @include desde_hasta(600px,1024px){
+    width: 200px;
+    height: 300px;
+  };
+}

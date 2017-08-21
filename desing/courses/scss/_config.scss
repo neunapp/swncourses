@@ -1,0 +1,63 @@
+//archivo de confguracion scss
+
+//importamos la tipodrafia
+@import url('https://fonts.googleapis.com/css?family=Iceland|Ubuntu');
+
+$font-title: 'Iceland', cursive;
+$font-subtitule: 'Ubuntu', sans-serif;
+$font-text: 'Ubuntu', sans-serif;
+$ligth: 300;
+$normal: 400;
+
+//funcion para convertir px a em
+@function em($el, $parent:16px) {
+  @return ($el/$parent)*1em;
+}
+
+$font-size: em(14px);
+$h3-size: $font-size * 1.15;
+$h2-size: $font-size * 1.35;
+$h1-size: $font-size * 2;
+
+//separacion de espacado
+$gutter: 1em;
+
+//paleta de colores
+$colors: (
+  primero: #2196F3,
+  segundo: #4CAF50,
+  tercero: #9e9e9e,
+  cuarto:  #0097a7,
+  blanco:  #ffffff,
+  negro:   #212121
+);
+
+//funciones
+@function color($color) {
+  @return map-get($colors,$color);
+}
+
+//funcion para devover imgen
+@function img($img) {
+  @return url('../img/#{$img}');
+}
+
+//funcion para responsive web desing
+//para llamar al mixin utilizar @include
+@mixin desde($size) {
+  @media screen and (min-width: $size){
+    @content;
+  }
+}
+
+@mixin hasta($size) {
+  @media screen and (max-width:$size){
+    @content;
+  }
+}
+
+@mixin desde_hasta($desde,$hasta) {
+  @media screen and (min-width: $desde) and (max-width: $hasta){
+    @content;
+  }
+}

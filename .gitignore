@@ -113,3 +113,9 @@ ncourses/applications/users/migrations/*
 
 
 ncourses/media/*
+
+desing/courses/bower_components/*
+
+desing/courses/img/*
+desing/courses/etc/*
+desing/courses/node_modules/*

@@ -1,0 +1,30 @@
+.more-courses{
+  text-align: center;
+  margin: 2em;
+  &__text{
+    display: block;
+    font-family: $font-title;
+    font-weight: bold;
+    font-stretch: ultra-condensed;
+    color: color(negro);
+  }
+}
+
+.suscription {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 2em;
+}
+
+.suscription-title {
+  display: block;
+  font-family: $font-title;
+  font-weight: bold;
+  font-stretch: ultra-condensed;
+  color: color(negro);
+}
+
+.form-suscription{
+  display: flex;
+}

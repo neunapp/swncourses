@@ -1,0 +1,96 @@
+.train {
+  margin-top: 3em;
+  margin-bottom: 3em;
+}
+
+.train-item {
+  padding: {
+    right: 1.5em;
+  }
+  &__copy{
+    &__title{
+      font-family: $font-text;
+      color: #444;
+      font-weight: 100;
+      @include hasta(1024px){
+        font-size: 1.3em;
+        font-weight: bold;
+      };
+    }
+    &__content{
+      text-align: left;
+      color: #444;
+      font-family: $font-text;
+      font-size: 1.2em;
+      @include hasta(1024px){
+        font-size: 0.9em;
+      };
+    }
+  }
+}
+
+.train-item__btn {
+  margin-top: 2em;
+  margin-bottom: 2em;
+  display: flex;
+  align-items: center;
+  &__principal{
+    padding: {
+      left: 1em;
+      right: 1em;
+      top: 0.6em;
+      bottom: 0.6em;
+    };
+    background: color(primero);
+    margin-right: 1em;
+    color: color(blanco);
+    &:hover{
+      background: color(blanco);
+      color: color(segundo);
+    }
+    @include hasta(1024px){
+      font-size: 0.7em;
+    };
+  }
+  &__secundario{
+    padding: {
+      left: 1em;
+      right: 1em;
+      top: 0.6em;
+      bottom: 0.6em;
+    };
+    background: color(blanco);
+    color: color(tercero);
+    border: 1px solid;
+    margin-right: 1em;
+    @include hasta(1024px){
+      font-size: 0.7em;
+    };
+  }
+}
+
+.teacher-staff-title{
+  color: color(tercero);
+  font-size: 1em;
+}
+
+.teacher-staff__item{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  padding:{
+    left: 0em;
+    right: 0em;
+    top: 1.5em;
+    bottom: 1.5em;
+  };
+  &__img{
+    width: 80px;
+    height: 80px;
+  }
+  &__name{
+    font-size: 0.8em;
+    color: color(tercero);
+  }
+}

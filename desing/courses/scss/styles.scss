@@ -1,0 +1,31 @@
+// archivo base de foundation
+@import "app";
+
+//archivos base para font awesone
+@import "font-awesome/scss/font-awesome";
+
+//arrchivo de confiuracion del proyecto
+@import "config";
+
+//estilos base
+@import "base/base";
+
+//modules
+@import "modules/header";
+@import "modules/footer";
+@import "modules/login";
+
+//modules componentes
+@import "components/home/banner";
+@import "components/home/courses";
+@import "components/home/miscelanea";
+@import "components/home/benefit";
+@import "components/home/train";
+//
+@import "components/courses/courses";
+@import "components/courses/filter";
+//
+@import "components/course/presentation";
+@import "components/course/temas";
+@import "components/course/info";
+@import "components/course/about";

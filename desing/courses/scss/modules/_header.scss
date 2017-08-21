@@ -1,0 +1,70 @@
+.header{
+  padding-left: 7%;
+  padding-right: 7%;
+  box-shadow: -1px 1px 10px 3px rgba(102,99,102,0.29);
+}
+
+.header-logo{
+  font-size: 2.2em;
+  font-weight: bold;
+  font-family: $font-title;
+  color: color(primero);
+  @include hasta(1024px){
+    display: none;
+  };
+}
+
+.menu-item{
+  padding: {
+    left: 0.5em;
+    right: 0.5em;
+  }
+  &:hover{
+    background: color(segundo);
+  }
+  &__link{
+    color: color(primero);
+    &:hover{
+      color: color(blanco);
+    }
+  }
+  @include hasta(640px){
+    display: block;
+    width: 100%;
+    text-align: left;
+  };
+}
+
+.menu-item__btn{
+  border-radius: 5px;
+  background: color(segundo);
+  color: color(blanco);
+  &:hover{
+    background: color(segundo);
+  }
+  &__login{
+    border-radius: 5px;
+    background: color(tercero);
+    &:hover{
+      background: color(segundo);
+    }
+    @include hasta(640px){
+      display: block;
+      width: 100%;
+      text-align: left;
+      background: color(blanco);
+      color: color(primero);
+    };
+  }
+  @include hasta(640px){
+    display: block;
+    width: 100%;
+    text-align: left;
+    background: color(blanco);
+    color: color(primero);
+  };
+}
+
+.top-bar, .top-bar ul {
+  background: color(blanco);
+}

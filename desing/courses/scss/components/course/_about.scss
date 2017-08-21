@@ -1,0 +1,14 @@
+.course-about {
+  margin-top: 2em;
+  margin-bottom: 2em;
+  border: 1px solid;
+  border-color: color(tercero);
+  color: #444;
+  padding: 1em;
+  &__title{
+    font-size: 1.5em;
+  }
+  &__text{
+    text-align: justify;
+  }
+}

@@ -1,0 +1,47 @@
+.course-info {
+  margin: {
+    top: 2em;
+    bottom: 2em;
+  };
+  color: #444;
+}
+
+.curse-recomendation{
+  border: 1px solid;
+  border-color: color(tercero);
+  padding: 1em;
+  &__title{
+    margin-bottom: 1em;
+  }
+  &__text{
+    text-align: justify;
+  }
+}
+
+.course-teacher{
+  border: 1px solid;
+  border-color: color(tercero);
+  padding: 1em;
+  &__title{
+    margin-bottom: 1em;
+  }
+  &__info{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    &__img{
+      width: 180px;
+      height: 180px;
+      @include hasta(600px){
+        display: none
+      };
+    }
+    &__text{
+      padding: {
+        left: 1em;
+        right: 0.5em;
+      };
+      text-align: justify;
+    }
+  }
+}
