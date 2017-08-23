@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="/css/styles.css">
+    <script type="text/javascript" src="/js/jquery.min.js"></script>
+    <script type="text/javascript" src="/js/foundation.min.js"></script>
+    <script type="text/javascript" src="/js/scrips.js"></script>
+    <title>Titulo de la pagina</title>
+  </head>
+  <body>
+    <div class="main-menu">
+      <div id="togle-menu" class="icon-menu">
+        <i class="fa fa-bars" aria-hidden="true"></i>
+      </div>
+      <div id="nav-menu" class="nav-menu">
+        <ul class="menu-main">
+          <li class="menu-user">
+            <img src="/img/avatar.jpg" alt="" class="menu-user__img">
+            <p class="menu-user__name">Juan Perez</p>
+          </li>
+          <li class="menu-item">
+            <i class="fa fa-home" aria-hidden="true"></i>
+            <a href="#" class="menu-item__link">Inicio</a>
+          </li>
+          <li class="menu-item">
+            <i class="fa fa-book" aria-hidden="true"></i>
+            <a href="#" class="menu-item__link">Cursos</a>
+          </li>
+          <li class="menu-item">
+            <i class="fa fa-globe" aria-hidden="true"></i>
+            <a href="#" class="menu-item__link">Comunidad</a>
+          </li>
+          <li class="menu-item">
+            <i class="fa fa-question-circle" aria-hidden="true"></i>
+            <a href="#" class="menu-item__link">Preguntas</a>
+          </li>
+          <li class="menu-item">
+            <i class="fa fa-sign-out" aria-hidden="true"></i>
+            <a href="#" class="menu-item__link__active">Salir</a>
+          </li>
+        </ul>
+      </div>
+      <a href="#" title="salir" class="icon-logout"><i class="fa fa-sign-out" aria-hidden="true"></i></a>
+    </div>
+    <div class="space_head">
+
+    </div>
+
+    <div class="grid-container">
+      <!-- cursos de usuario -->
+      <div class="user-cursos">
+        <div class="user-cursos__head">
+          <i class="fa fa-play-circle fa-2x" aria-hidden="true"></i>
+          <p class="user-cursos__head__title">Mis cursos</p>
+        </div>
+        <div class="grid-x grid-margin-x user-cursos__items">
+          <div class="cell small-12 medium-4 large-3">
+            <div class="user-cursos__items__card">
+              <img src="/img/2.jpg" alt="" class="user-cursos__items__card__img">
+              <a class="user-cursos__items__card__name">Programacion con React</a>
+              <p class="user-cursos__items__card__nivel">Intermedio</p>
+            </div>
+          </div>
+          <div class="cell small-12 medium-4 large-3">
+            <div class="user-cursos__items__card">
+              <img src="/img/q.jpg" alt="" class="user-cursos__items__card__img">
+              <a class="user-cursos__items__card__name">Programacion con React</a>
+              <p class="user-cursos__items__card__nivel">Intermedio</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--  fin de cursos de usuario -->
+
+      <!--  cursos relacionados -->
+      <div class="user-relation-courses">
+        <div class="relation-courses__head">
+          <i class="fa fa-wpexplorer fa-2x" aria-hidden="true"></i>
+          <p class="user-cursos__head__title">Tambien podrian interesarte estos cursos</p>
+        </div>
+        <div class="grid-x grid-margin-x relation-courses__items">
+          <div class="cell small-12 medium-4 large-3">
+            <div class="user-cursos__items__card">
+              <img src="/img/i1.jpg" alt="" class="relation-courses__img">
+              <a class="relation-courses__name">Programacion con React</a>
+              <p class="relation-courses__nivel">Intermedio</p>
+            </div>
+          </div>
+          <div class="cell small-12 medium-4 large-3">
+            <div class="user-cursos__items__card">
+              <img src="/img/i2.jpg" alt="" class="relation-courses__img">
+              <a class="relation-courses__name">Programacion con React</a>
+              <p class="relation-courses__nivel">Intermedio</p>
+            </div>
+          </div>
+          <div class="cell small-12 medium-4 large-3">
+            <div class="user-cursos__items__card">
+              <img src="/img/2.jpg" alt="" class="relation-courses__img">
+              <a class="relation-courses__name">Programacion con React</a>
+              <p class="relation-courses__nivel">Intermedio</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--  fin cursos relacionados -->
+    </div>
+  </body>
+</html>

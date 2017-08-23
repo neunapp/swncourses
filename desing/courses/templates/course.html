@@ -8,7 +8,9 @@
     <link rel="stylesheet" href="/css/styles.css">
     <script type="text/javascript" src="/js/jquery.min.js"></script>
     <script type="text/javascript" src="/js/foundation.min.js"></script>
+    <script type="text/javascript" src="/js/facebook.js"></script>
     <title>Titulo de la pagina</title>
+
   </head>
   <body>
     <header>
@@ -51,7 +53,7 @@
               <p class="course-price__etiqueta">Basico</p>
             </div>
             <div class="course-btn">
-              <a href="#" class="course-btn__link">COMENZAR CURSO</a>
+              <a href="#" class="course-btn__link" data-open="exampleModal2">COMENZAR CURSO</a>
             </div>
           </div>
           <div class="cell small-12 large-4 course-video">
@@ -175,6 +177,24 @@
       </div>
     </div>
     <!--  fin about -->
+
+
+
+    <!-- modal para login con redes sociales -->
+    <div class="reveal" id="exampleModal2" data-reveal>
+      <div class="grid-container">
+        <div class="grid-x align-center">
+          <h1 class="cell login_title"> Iniciar sesion en Ademmy </h1>
+          <p class="cell login-subtitle">Registrate para poder acceder a los cursos</p>
+          <div class="fb-login-button login-btn" data-width="200" data-max-rows="1" data-size="large" data-button-type="continue_with" data-show-faces="false" data-auto-logout-link="false" data-use-continue-as="true"></div>
+        </div>
+      </div>
+      <button class="close-button" data-close aria-label="Close reveal" type="button">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+
+    <!-- fin modal para login con redes sociales -->
   </body>
   <script type="text/javascript" src="/js/app.js"></script>
 </html>

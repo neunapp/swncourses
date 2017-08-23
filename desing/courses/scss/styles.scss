@@ -14,6 +14,7 @@
 @import "modules/header";
 @import "modules/footer";
 @import "modules/login";
+@import "modules/menu";
 
 //modules componentes
 @import "components/home/banner";
@@ -29,3 +30,9 @@
 @import "components/course/temas";
 @import "components/course/info";
 @import "components/course/about";
+//
+@import "components/user-home/user_courses";
+@import "components/user-home/user_relation_courses";
+//
+@import "components/clases/info-clases";
+@import "components/clases/list-clases";

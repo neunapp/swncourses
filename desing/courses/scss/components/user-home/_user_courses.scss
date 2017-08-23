@@ -1,0 +1,49 @@
+.user-cursos {
+  padding: 1em;
+  border: 1px solid;
+  border-color: #e0e0e0;
+}
+
+.user-cursos__head{
+  display: flex;
+  color: #ef5350;
+  justify-content: flex-start;
+  border-bottom: 1px solid;
+  border-color: #e0e0e0;
+  margin-bottom: 1em;
+  &__title{
+    color:#444;
+    margin-left: 1em;
+    text-decoration: underline;
+    font-family: $font-text;
+  }
+}
+
+.user-cursos__items{
+  &__card{
+    box-shadow: 2px 2px 5px 2px rgba(143,139,143,0.23);
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    padding: 0.5em;
+    &__img{
+      width: 130px;
+      height: 130px;
+      border-radius: 50%;
+    }
+    &__name{
+      color: #444;
+      font-family: $font-text;
+      &:hover{
+        color: color(negro);
+        text-decoration: underline;
+      }
+    }
+    &__nivel{
+      color: color(segundo);
+      font-size: 0.8em;
+      font-weight: bold;
+    }
+  }
+}

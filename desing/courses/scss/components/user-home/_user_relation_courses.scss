@@ -1,0 +1,41 @@
+.user-relation-courses {
+  padding: 1em;
+  border: 1px solid;
+  border-color: #e0e0e0;
+}
+
+.relation-courses__head{
+  display: flex;
+  color: #ef5350;
+  justify-content: flex-start;
+  border-bottom: 1px solid;
+  border-color: #e0e0e0;
+  margin-bottom: 1em;
+  &__title{
+    color:#444;
+    margin-left: 1em;
+    text-decoration: underline;
+    font-family: $font-text;
+  }
+}
+
+.relation-courses__img{
+  width: 150px;
+  height: 150px;
+}
+
+.relation-courses__nivel{
+  color: #039be5;
+  font-size: 0.8em;
+  font-weight: bold;
+}
+
+.relation-courses__name{
+  color: #444;
+  font-family: $font-text;
+  &:hover{
+    color: color(negro);
+    text-decoration: underline;
+    font-size: 1.2em;
+  }
+}
