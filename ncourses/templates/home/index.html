@@ -7,272 +7,156 @@
 {% load l10n %}
 
 {% block title %}
-  Cursos online Ademmy
+  Cursos de Ingenieria
 {% endblock %}
 
 {% block description %}
-  Cursos onlyne ademmy
+  Encuentra los mejores cursos de ingenieria en el peru
 {% endblock %}
 
 {% block content %}
-
-<nav class="white" role="navigation">
-    <div class="nav-wrapper container fixed">
-      <a id="logo-container" href="index.html" class="brand-logo"> <img src="ademmy.png" alt="" width="190px" height="auto"></a>
-      <ul class="right hide-on-med-and-down">
-        <li><a href="cursos.html" class="blue-text">Cursos</a></li>
-        <li><a href="blog.html" class="blue-text">Blog</a></li>
-        <li><a href="login.html" class="blue-text">Ingresa</a></li>
-        <li><a href="registro.html" class="waves-effect waves-light btn green">Registrate</a></li>
-      </ul>
-
-      <ul id="nav-mobile" class="side-nav">
-        <li><a href="cursos.html" class="blue-text">Cursos</a></li>
-        <li><a href="login.html">Ingresa</a></li>
-        <li><a href="registro.html">Registrate</a></li>
-      </ul>
-      <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
-    </div>
-</nav>
-
-  <div class="slider">
-    <ul class="slides">
-        <li>
-          <img src="{% static 'img/miralo.jpg' %}"> <!-- random image -->
-            <div class="caption left-align">
-              <div class="col s12 m12 l7">
-                <h2>Cursos de ingeniería online</h2>
-                <h5 class=" grey-text text-lighten-3">Sigue capacitandonte y creciendo con nuestros cursos .</h5>
-                <a class="waves-effect waves-light btn green" href="registro.html" >Empieza ahora</a>
-              </div>
-            </div>
-        </li>
-        <li>
-          <img src="{% static 'img/entrepreneur.jpg' %}"> <!-- random image -->
-          <div class="caption left-align">
-            <h3> Cursos 100% practicos.</h3>
-            <h5 class=" grey-text text-lighten-3">Aprende en la comodidad de tu hogar.</h5>
-            <a class="waves-effect waves-light btn green" href="registro.html" >Empieza ahora</a>
-          </div>
-        </li>
-      </ul>
-  </div>
-
-  <div class="container">
-    <div class="row">
-      <div class="col s12 m12 l12">
-        <div class="row center">
-          <h2> Lo ques nos hace diferente </h2>
-        </div>
-        <div class="row">
-          <div class="col s12 m4">
-            <div class="icon-block">
-              <h2 class="center blue-text"><i class="medium material-icons">schedule</i></h2>
-              <h5 class="center">Estudia cuando quieras</h5>
-              <FONT SIZE=4>
-                <p class="light">Acceso las 24 horas al día para que aprendas a tu propio ritmo, los 365 días del año. Puedes ver las clases de cualquier dispositivo, y en la comodidad de tu hogar.</p>
-              </FONT>
-            </div>
-          </div>
-          <div class="col s12 m4">
-                <div class="icon-block">
-                  <h2 class="center blue-text"><i class=" medium material-icons">video_library</i></h2>
-                  <h5 class="center">Los mejores cursos</h5>
-                  <FONT SIZE=4>
-                    <p class="light">Clases de primera calidad, con los mejores profesores que haran que aprender sea algo divertido, y tendras nuestra asesoria constante.</p>
-                  </FONT>
-                </div>
-          </div>
-          <div class="col s12 m4">
-                <div class="icon-block">
-                    <h2 class="center blue-text"><i class="medium material-icons">picture_in_picture</i></h2>
-                    <h5 class="center">Obten un certificado</h5>
-                    <FONT SIZE=4>
-                      <p class="light">Una vez termines el curso, obtendrás un ‘Certificado’ que mostrara las nuevas habilidades que has aprendido con nosotros.</p>
-                    </FONT>
-                </div>
-              </div>
-        </div>
-        <div class="row center">
-          <h2> Todas las ingenierias a tu alcance </h2>
-        </div>
-        <div class="row">
-          <div class="col s12 m12 l4">
-            <div class="card medium">
-              <div class="card-image waves-effect waves-block waves-light">
-                <img class="activator" src="{% static 'img/prueba.jpg' %}">
-              </div>
-              <div class="card-content">
-                <span class="card-title activator  light-blue-text "> Operación de Calderos <i class="material-icons right">more_vert</i></span>
-
-                <p class="green-text text-accent-2"> Basico  &nbsp;&nbsp;
-                  <i class="material-icons tiny">perm_identity</i>   15,200   &nbsp;&nbsp;
-                  <i class="material-icons tiny">schedule</i> 5h 11m
-                </p>
-                <a class="waves-effect waves-light btn green" href="registro.html" > S/.120 <i class="material-icons tiny">shopping_cart</i></a>
-              </div>
-              <div class="card-reveal">
-                <span class="card-title light-blue-text ">Descripción<i class="material-icons right">close</i></span>
-                <p>Aprende como crear una empresa desde el inicio como uno de los mejores hombres de negocio. <br><br>
-                  <a class="waves-effect waves-light btn green" href="registro.html" >Empieza ahora</a>
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="col s12 m12 l4">
-            <div class="card medium">
-                    <div class="card-image waves-effect waves-block waves-light">
-                      <img class="activator" src="{% static 'img/marca.png' %}">
-                    </div>
-                    <div class="card-content">
-                      <span class="card-title activator light-blue-text  "> Operación de Calderos Industriales <i class="material-icons right">more_vert</i></span>
-                      <p><a href="#">Ver mas</a></p>
-                    </div>
-                    <div class="card-reveal">
-                      <span class="card-title grey-text text-darken-4">Descripción<i class="material-icons right">close</i></span>
-                      <p>Muy pronto :).</p>
-                    </div>
-                  </div>
-            <div class="col s12 m12 l4">
-                <div class="card medium">
-                  <div class="card-image waves-effect waves-block waves-light">
-                    <img class="activator" src="{% static 'img/espacio.png' %}">
-                  </div>
-                  <div class="card-content">
-                        <span class="card-title activator grey-text text-darken-4">Dimensionamiento de bombas centrifugas<i class="material-icons right">more_vert</i></span>
-                        <p><a href="#">Ver mas</a></p>
-                  </div>
-                  <div class="card-reveal">
-                        <span class="card-title grey-text text-darken-4">Descripción<i class="material-icons right">close</i></span>
-                        <p>Muy pronto :).</p>
-                  </div>
-                </div>
-            </div>
-          </div>
-        </div>
-        <div class=" row">
-                <div class="col s12 m12 l4">
-                  <div class="card medium">
-                    <div class="card-image waves-effect waves-block waves-light">
-                      <img class="activator" src="{% static 'img/marca.png' %}">
-                    </div>
-                    <div class="card-content">
-                      <span class="card-title activator grey-text text-darken-4">Automatización de procesos industriales<i class="material-icons right">more_vert</i></span>
-                      <p><a href="#">Ver mas</a></p>
-                    </div>
-                    <div class="card-reveal">
-                      <span class="card-title grey-text text-darken-4">Descripción<i class="material-icons right">close</i></span>
-                      <p>Muy pronto :) .</p>
-                    </div>
-                  </div>
-                </div>
-                <div class="col s12 m12 l4">
-                  <div class="card medium">
-                    <div class="card-image waves-effect waves-block waves-light">
-                      <img class="activator" src="{% static 'img/marca.png' %}">
-                    </div>
-                    <div class="card-content">
-                      <span class="card-title activator grey-text text-darken-4">Controladores logigos programables <i class="material-icons right">more_vert</i></span>
-                      <p><a href="#">Ver mas</a></p>
-                    </div>
-                    <div class="card-reveal">
-                      <span class="card-title grey-text text-darken-4">Descripción<i class="material-icons right">close</i></span>
-                      <p>Muy pronto :).</p>
-                    </div>
-                  </div>
-                </div>
-                <div class="col s12 m12 l4">
-                  <div class="card medium">
-                    <div class="card-image waves-effect waves-block waves-light">
-                      <img class="activator" src="{% static 'img/marca.png' %}">
-                    </div>
-                    <div class="card-content">
-                      <span class="card-title activator grey-text text-darken-4">Curso basico de SAP para universitarios<i class="material-icons right">more_vert</i></span>
-                      <p><a href="#">Ver mas</a></p>
-                    </div>
-                    <div class="card-reveal">
-                      <span class="card-title grey-text text-darken-4">Descripción<i class="material-icons right">close</i></span>
-                      <p>Muy pronto :)</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-      </div>
-    </div>
-
-    <div class="row center">
-            <h2 class="blue-text"> Ventajas de estudiar en Ademmy </h2>
-          </div>
-    <div class=" row">
-            <div class="col s12 m12 l6">
-              <img class="responsive-img" src="{% static 'img/chico.jpg' %}" >
-            </div>
-
-            <div class="col s12 m12 l6">
-              <h4 class="red-text"> Cursos de ingeniería practicos</h4>
-              <p class="flow-text">Una plataforma moderna, donde aprenderas las cosas de una manera agradable y entretenida. Vamos a hacer un proyecto para que puedas aplicar lo aprendido.</p>
-            </div>
-          </div>
-
-    <div class="row">
-            <div class="col s12 m12 l6">
-              <h4 class="green-text"> Sigue capacitandote a tu ritmo</h4>
-              <p class="flow-text">Podras estudiar a culquier hora en la comodidad de tu hogar, para que sigas creciendo profesionalmente.</p>
-            </div>
-    <div class="col s12 m12 l6">
-            <img class="responsive-img" src="{% static 'img/work.jpg' %}">
-          </div>
-    <div class=" row">
-          <div class="col s12 m12 l6">
-            <img class="responsive-img" src="entrepreneur.jpg" >
-          </div>
-          <div class="col s12 m12 l6">
-            <h4 class="purple-text"> Aprende algo nuevo cada día</h4>
-            <p class="flow-text"> Dedica un tiempo del día para seguir aprendiendo nuevas cosas, para que puedas hacer lo que te gusta y dedicarte a eso.</p>
-          </div>
-        </div>
-    <div class="row center">
-          <h3>¿Listo para seguir creciendo profesionalmente?    </h3>
-        </div>
-    <div class="row center">
-          <a href="registro.html" id="download-button" class="btn-large waves-effect waves-light green lighten-1">Empieza ahora</a>
-        </div>
-  </div>
-
-<footer class="page-footer #ffffff white">
-  <div class="container">
-    <div class="row">
-      <div class="col l6 s12">
-        <h5 class="#424242 grey-text text-darken-3">Acerca de nosotros</h5>
-        <FONT SIZE=4>
-          <p class="left-align light">Somos unos apasionados ingenieros y desarrolladores, creemos que todo el mundo se merece clases de calidad a precios accesibles, los mejores profesores dictando los cursos que quieres aprender, de una forma amena y sencilla. Escribenos a ademmygo@gmail.com para mayor información</p>
-        </FONT>
-      </div>
-      <div class="col l3 s12">
-        <h5 class="#424242 grey-text text-darken-3">Nosotros</h5>
-        <ul>
-          <li><a class="#424242 grey-text text-darken-3" href="#!">Sobre Ademmy</a></li>
-          <li><a class="#424242 grey-text text-darken-3" href="#!">Terminos y condiciones</a></li>
-          <li><a class="#424242 grey-text text-darken-3" href="#!">Politicas de privacidad</a></li>
-          <li><a class="#424242 grey-text text-darken-3" href="#!">Empresas</a></li>
-        </ul>
-      </div>
-      <div class="col l3 s12">
-        <h5 class="#424242 grey-text text-darken-3">Categorias</h5>
-        <ul>
-          <li><a class="#424242 grey-text text-darken-3" href="#!">Procesos</a></li>
-          <li><a class="#424242 grey-text text-darken-3" href="#!">Automatización</a></li>
-          <li><a class="#424242 grey-text text-darken-3" href="#!">Informatica</a></li>
-          <li><a class="#424242 grey-text text-darken-3" href="#!">Mecanica</a></li>
+  {% include "include/header.html" %}
+  <!-- Inicio de banner  -->
+  <div class="banner">
+    <div class="orbit banner-container" role="region" aria-label="Favorite Space Pictures" data-orbit>
+      <div class="orbit-wrapper">
+        <ul class="orbit-container">
+          <li class="is-active orbit-slide">
+            <figure class="orbit-figure">
+              <img class="orbit-image banner-img" src="{% static 'img/1.jpg' %}" alt="Estudia los mejores cursos de ingeniería en la comodidad de tu hogar.">
+            </figure>
+          </li>
         </ul>
       </div>
     </div>
-  </div>
-
-  <div class="row center">
-    <div class="col l12 s12">
-      <a class="#424242 grey-text text-darken-3" href="#!">Copyright © 2017 Ademmy SAC. Todos los derechos reservados.</a>
+    <div class="banner__copy">
+      <h1 class="banner__copy__title">Sigue creciendo, a tu ritmo.</h1>
+      <p class="banner__copy__text">Estudia los mejores cursos de ingeniería en la comodidad de tu hogar.</p>
+      <a href="{% url 'cursos_app:course-search' 'todos' %}" class="banner__copy__btn">Ver Cursos</a>
     </div>
   </div>
-</footer>
+  <!--  fin de banner -->
+
+  <!--  curso mas populares  -->
+  <div class="grid-container">
+    <h4 class="course-card__title">Cursos más populares</h4>
+    <div class="grid-x grid-margin-x">
+      {% for c in cursos  %}
+        <div class="cell small-12 medium-6 large-3 course-card">
+          <img src="{{c.image.url}}" alt="" class="course-card__img">
+          <div class="course-card__etiqueta">
+            {% if c.nivel == '0' %}
+              <p class="course-card__etiqueta__nivel basico">Basico</p>
+            {% elif c.nivel == '1' %}
+              <p class="course-card__etiqueta__nivel inter">Intermedio</p>
+            {% else %}
+              <p class="course-card__etiqueta__nivel avanzado">Avanzado {{c.nivel}}</p>
+            {% endif %}
+
+            <p class="course-card__etiqueta__teacher teacher">{{c.teacher.first_name}} {{c.teacher.last_name}}</p>
+          </div>
+          <div class="course-card__name">
+            <a href="#" class="course-card__name__title">{{c.name}}</a>
+            <p class="course-card__name__description">{{c.description_short}}</p>
+          </div>
+          <div class="course-card__footer">
+            <p class="course-card__footer__price">S/ {{c.price}}</p>
+            <a class="course-card__foote__etiqueta">{{c.category}}</a>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+  <!--  fin curso mas populares  -->
+
+  <!-- boton mas cursos -->
+  <div class="grid-x align-center">
+    <div class="cell small-12 medium-2 more-courses">
+      <a href="{% url 'cursos_app:course-search' 'todos' %}" class="more-courses__text">Ver más cursos</a>
+      <a href="{% url 'cursos_app:course-search' 'todos' %}" class="icon-more-courses"><i class="fa fa-plus-circle fa-2x" aria-hidden="true"></i></a>
+    </div>
+  </div>
+  <!-- fin de mas cursos-->
+
+  <!-- bloque beneficios -->
+  <div class="grid-container">
+    <div class="grid-x grid-margin-x aling-center benefit">
+      <div class="cell small-12 medium-6 benefit-item">
+        <div class="benefit-item__title">
+          <p class="benefit-item__title__icon"><i class="fa fa-graduation-cap fa-2x" aria-hidden="true"></i></p>
+          <p class="benefit-item__title__text">Cursos en Ingenieria</p>
+        </div>
+        <div class="benefit-item__content">
+          <p>Con nosotros podrás estudiar los cursos que cualquier buen  profesional
+            necesita para seguir creciendo.</p>
+        </div>
+      </div>
+      <div class="cell small-12 medium-6 benefit-item">
+        <div class="benefit-item__title">
+          <p class="benefit-item__title__icon"><i class="fa fa-laptop fa-2x" aria-hidden="true"></i></p>
+          <p class="benefit-item__title__text">Aprende desde casa</p>
+        </div>
+        <div class="benefit-item__content">
+          <p>Nuestros cursos son prácticos y con una duración adecuada ya que
+            en una tarde aprenderás todo lo que necesitas saber de un tema en especifico.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- fin de bloque beneficios -->
+
+  <!-- bloque enseña en ademmy -->
+  <div class="grid-container">
+    <div class="grid-x train">
+      <div class="cell small-12 medium-6 large-8 train-item">
+        <div class="train-item__copy">
+          <h1 class="train-item__copy__title">Consigue el trabajo soñado</h1>
+          <p class="train-item__copy__content">Conviertete en un intructor de Admmy y enseña almundo tu capaciadad,
+          unete a un gran staff de profesionales y tarabaja junto a ellos ense..Conviertete en un intructor de Admmy y enseña almundo tu capaciadad,
+          unete a un gran staff de profesionales y tarabaja junto a ellos ense..Conviertete en un intructor de Admmy y enseña almundo tu capaciadad,
+          unete a un gran staff de profesionales y tarabaja junto a ellos ense..</p>
+        </div>
+        <div class="train-item__btn">
+          <a href="#" class="train-item__btn__principal">COMIENZA AHORA</a>
+          <a href="#" class="train-item__btn__secundario">QUIERO SABER MAS</a>
+        </div>
+      </div>
+      <div class="cell small-12 medium-6 large-4 train-item">
+        <h4 class="teacher-staff-title">Nuestros Profesores:</h4>
+        <div class="grid-x teacher-staff">
+          <div class="cell small-6 teacher-staff__item">
+            <img src="/img/avatar.jpg" alt="" class="teacher-staff__item__img">
+            <p class="teacher-staff__item__name">Cristhian Santa Cruz.</p>
+          </div>
+          <div class="cell small-6 teacher-staff__item">
+            <img src="/img/4.jpg" alt="" class="teacher-staff__item__img">
+            <p class="teacher-staff__item__name">Cristhian Santa Cruz.</p>
+          </div>
+          <div class="cell small-6 teacher-staff__item">
+            <img src="/img/avatar.jpg" alt="" class="teacher-staff__item__img">
+            <p class="teacher-staff__item__name">Cristhian Santa Cruz.</p>
+          </div>
+          <div class="cell small-6 teacher-staff__item">
+            <img src="/img/4.jpg" alt="" class="teacher-staff__item__img">
+            <p class="teacher-staff__item__name">Cristhian Santa Cruz.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- fin bloque enseña -->
+
+  <div class="grid-x align-center suscription">
+    <p class="suscription-title">Suscribirme en Ademmy</p>
+    <form class="form-suscription" method="post">
+      <input type="text" placeholder="email...">
+      <button type="submit" class="button secondary"name="button">Suscribirme</button>
+    </form>
+  </div>
+
+  <div class="grid-container">
+    <div class="grid-x align-center">
+      <a href="#">Todo los derechos resevados para Ademmy</a>
+    </div>
+  </div>
 {% endblock %}

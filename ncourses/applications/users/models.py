@@ -63,10 +63,11 @@ class Teacher(TimeStampedModel):
         max_length=100
     )
     state = models.BooleanField(default=False)
+    about = models.TextField(blank=True)
 
     class Meta:
-        verbose_name = 'Categoria'
-        verbose_name_plural = 'Categorias'
+        verbose_name = 'Profesor'
+        verbose_name_plural = 'Profesores'
 
     def __str__(self):
-        return str(self.name)
+        return str(self.user.first_name)

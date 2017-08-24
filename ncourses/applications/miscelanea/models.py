@@ -4,6 +4,9 @@ from __future__ import unicode_literals
 # third-party
 from model_utils.models import TimeStampedModel
 
+# standard library
+from datetime import timedelta, datetime
+
 
 from django.db import models
 from django.conf import settings
@@ -20,6 +23,7 @@ class Category(TimeStampedModel):
         max_length=200
     )
     description = models.TextField(blank=True)
+    slug = models.SlugField(editable=False, max_length=400)
 
     class Meta:
         verbose_name = 'Categoria'
@@ -27,6 +31,27 @@ class Category(TimeStampedModel):
 
     def __str__(self):
         return self.name
+
+
+    #funcion que se ejecuta al guardar
+    def save(self, *args, **kwargs):
+        if not self.id:
+            # calculamos el total de segundos de la hora actual
+            now = datetime.now()
+            total_time = timedelta(
+                hours=now.hour,
+                minutes=now.minute,
+                seconds=now.second
+            )
+            seconds = int(total_time.total_seconds())
+            slug_unique = '%s %s' % (self.name, str(seconds))
+        else:
+            seconds = self.slug.split('-')[-1]  # recuperamos los segundos
+            slug_unique = '%s %s' % (self.name, str(seconds))
+
+        self.slug = slugify(slug_unique)
+        #
+        super(Category, self).save(*args, **kwargs)
 
 
 @python_2_unicode_compatible

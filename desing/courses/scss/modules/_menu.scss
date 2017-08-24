@@ -3,7 +3,7 @@
   display: block;
 }
 
-.main-menu {
+.user-main-menu {
   background: color(blanco);
   width: 100%;
   padding: 1em 0;
@@ -28,7 +28,7 @@
   color: color(negro);
 }
 
-.nav-menu {
+.user-nav-menu {
   color: color(negro);
   position: fixed;
   top: 0;
@@ -54,7 +54,7 @@
   z-index: 200;
 }
 
-.menu-main {
+.user-menu-main {
   background: color(blanco);
   list-style: none;
   display: block;
@@ -65,7 +65,7 @@
   height: 100vh;
 }
 
-.menu-item {
+.user-menu-item {
   line-height: 4em;
   padding-left: 2em;
   &:hover {

@@ -25,6 +25,9 @@ from applications.miscelanea.models import (
     Recomendation
 )
 
+#app user
+from applications.users.models import Teacher
+
 
 #local
 from .signals import save_url_image
@@ -35,6 +38,12 @@ from .managers import CourseManager
 class Course(TimeStampedModel):
     """ modelo para Cursos """
 
+    NIVEL_CHOICES = (
+        ('0', 'Basico'),
+        ('1', 'Intermedio'),
+        ('2', 'Avanzado'),
+    )
+    #
     name = models.CharField(
         'Nombre Curso',
         max_length=100,
@@ -54,7 +63,9 @@ class Course(TimeStampedModel):
     )
     image = models.ImageField(
         upload_to='curso',
-        verbose_name='imagen_curso'
+        verbose_name='imagen_curso',
+        blank=True,
+        null=True,
     )
     image_url = models.URLField(blank=True)
     description_short = models.TextField(
@@ -76,13 +87,16 @@ class Course(TimeStampedModel):
         related_name='Recomendacion',
     )
     teacher = models.ForeignKey(
-        settings.AUTH_USER_MODEL,
+        Teacher,
         related_name='user_teacher',
+        blank=True,
+        null=True,
     )
     state = models.BooleanField(default=False)
     point = models.IntegerField(default=0)
     visit = models.IntegerField(default=0)
     tags = models.ManyToManyField(Tag)
+    nivel = models.CharField('Nivel', max_length=1, choices=NIVEL_CHOICES)
     slug = models.SlugField(editable=False, max_length=400)
 
     objects = CourseManager()
@@ -106,6 +120,9 @@ class Course(TimeStampedModel):
 
     #funcion que se ejecuta al guardar
     def save(self, *args, **kwargs):
+        #cambiammos el formato de video
+        video = self.video.split('/')
+        self.video = "https://www.youtube.com/embed/"+video[3]
         if not self.id:
             # calculamos el total de segundos de la hora actual
             now = datetime.now()

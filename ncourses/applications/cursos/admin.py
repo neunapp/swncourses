@@ -35,6 +35,7 @@ class CourseAdmin(admin.ModelAdmin):
         'resume',
         'recomendation',
         'teacher',
+        'nivel',
         'tags',
         'state',
     )

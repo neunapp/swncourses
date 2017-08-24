@@ -44,15 +44,16 @@ class CoursesSearchView(ListView):
 
     def get_context_data(self, **kwargs):
         context = super(CoursesSearchView, self).get_context_data(**kwargs)
-        context['form'] = SearchForm
+        #context['form'] = SearchForm
         context['other_courses'] = Course.objects.other_courses()
         context['categorys'] = Category.objects.all()
         return context
 
     def get_queryset(self):
         #recuperamos el valor por GET
-        print '------'
-        print self.kwargs['category']
-        q = self.request.GET.get("kword", '')
-        queryset = Course.objects.search_courses(q,'todo',0)
-        return queryset
+        #print '------'
+        #print self.kwargs['category']
+        #q = self.request.GET.get("kword", '')
+        #queryset = Course.objects.search_courses('','todo',0)
+        #return queryset
+        return Course.objects.courses_by_category(self.kwargs['category'])

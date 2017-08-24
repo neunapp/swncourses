@@ -27,6 +27,27 @@ class CourseManager(Manager):
         ).order_by('-point').order_by('-visit')
 
 
+    def courses_by_category(self, categoria):
+        """
+            funcion que devuleve todos los cursos de una categoria
+        """
+
+        if categoria == 'todos':
+            return self.filter(
+                state=True,
+            )
+        elif categoria == 'gratis':
+            return self.filter(
+                state=True,
+                price__lte=0,
+            )
+        else:
+            return self.filter(
+                state=True,
+                category__slug=categoria,
+            )
+
+
     def search_courses(self, kword, category, price):
         '''
         recuperar los cursos por palabra clave
@@ -41,17 +62,17 @@ class CourseManager(Manager):
         )
 
         # nombre
-        query1 = consulta.filter(
-            name__trigram_similar=kword
-        ).order_by('-visit')
-        #descripcion corta
-        query2 = consulta.filter(
-            description_short__trigram_similar=kword
-        ).order_by('-visit')
-        # tag
-        query3 = consulta.filter(
-            tags__name__trigram_similar=kword
-        ).order_by('-visit')
+        # query1 = consulta.filter(
+        #     name__trigram_similar=kword
+        # ).order_by('-visit')
+        # #descripcion corta
+        # query2 = consulta.filter(
+        #     description_short__trigram_similar=kword
+        # ).order_by('-visit')
+        # # tag
+        # query3 = consulta.filter(
+        #     tags__name__trigram_similar=kword
+        # ).order_by('-visit')
 
         #resultado
-        return (query1 | query2 | query3).distinct()
+        #return (query1 | query2 | query3).distinct()

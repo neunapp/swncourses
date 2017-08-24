@@ -1,29 +1,124 @@
 {% extends "home/base_home.html" %}
 
+{% load  staticfiles %}
+
 {% load thumbnail %}
 
 {% load l10n %}
 
 {% block title %}
-  Cursos online Ademmy
+  {{object.name}}
 {% endblock %}
 
 {% block description %}
-  Cursos onlyne ademmy
+  {{object.description}}
 {% endblock %}
 
 {% block content %}
+  {% include "include/header.html" %}
+  <!-- presentacion del curso -->
+  <div class="course-presentation">
+    <div class="grid-container">
+      <div class="grid-x">
+        <div class="cell small-12 large-8">
+          <div class="course-copy">
+            <h1 class="course-copy__title">{{object.name}}</h1>
+            <p class="course-copy__description">{{object.description_short}}</p>
+          </div>
+          <div class="course-price">
+            <p class="course-price__monto">S/. {{object.price}}</p>
+            <p class="course-price__etiqueta">{{object.get_nivel_display}}</p>
+          </div>
+          <div class="course-btn">
+            <a href="#" class="course-btn__link" data-open="exampleModal2">COMENZAR CURSO</a>
+          </div>
+        </div>
+        <div class="cell small-12 large-4 course-video">
+          <iframe width="100%" height="100%" src="{{object.video}}" frameborder="0" allowfullscreen></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- fin de presentacion del curso -->
 
-  <h1>Lista de Cursos mas Visitados</h1>
-  <p>
-    {{object}}
-  </p>
-  <h2>temas de curso</h2>
-  {% for t in temas %}
-    <p>{{ t.name }}</p>
-  {% endfor %}
-  <h2>Docente</h2>
-  <p>{{object.teacher}}</p>
+  <!-- inicio de temario -->
+  <div class="grid-container">
+    <h4 class="temas-title">Estos son los temas que aprenderas durante el curso</h4>
+    <div class="grid-x grid-margin-x align-center temas">
+      {% for t in temas  %}
+        <div class="cell small-12 medium-6 large-4">
+          <div class="tema-item">
+            <p class="tema-item__name">{{t.name}}</p>
+            <p class="tema-item__min">{{t.minutes}} min</p>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+  <!-- fin de temario -->
+
+  <!-- sobre el curso -->
+  <div class="grid-container">
+    <div class="grid-x grid-margin-x course-info">
+      <div class="cell small-12 large-6">
+        <div class="curse-recomendation">
+          <h4 class="curse-recomendation__title">Recomendaciones antes de llevar el curso</h4>
+          <p class="curse-recomendation__text">{{object.recomendation}}</p>
+        </div>
+      </div>
+      <div class="cell small-12 large-6">
+        <div class="course-teacher">
+          <h4 class="course-teacher__title">Acerca del Docente</h4>
+          <div class="course-teacher__info">
+            <img src="/img/avatar.jpg" alt="" class="course-teacher__info__img">
+            <p class="course-teacher__info__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+              sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+              quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+              Excepteur sint occaecat cupidatat non proident.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--  fin sobre le curso -->
+
+  <!--  inicio about -->
+  <div class="grid-container">
+    <div class="grid-x grid-margin-x align-center">
+      <div class="cell small-12 course-about">
+        <p class="course-about__title">¿Por que llevar el curso?</p>
+        <p class="course-about__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+          tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+          quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+          Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+          Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
+          deserunt mollit anim id est laborum.
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+          labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
+          nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit
+          esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident,
+          sunt in culpa qui officia deserunt mollit anim id est laborum.
+        </p>
+      </div>
+    </div>
+  </div>
+  <!--  fin about -->
 
 
+
+  <!-- modal para login con redes sociales -->
+  <div class="reveal" id="exampleModal2" data-reveal>
+    <div class="grid-container">
+      <div class="grid-x align-center">
+        <h1 class="cell login_title"> Iniciar sesion en Ademmy </h1>
+        <p class="cell login-subtitle">Registrate para poder acceder a los cursos</p>
+        <div class="fb-login-button login-btn" data-width="200" data-max-rows="1" data-size="large" data-button-type="continue_with" data-show-faces="false" data-auto-logout-link="false" data-use-continue-as="true"></div>
+      </div>
+    </div>
+    <button class="close-button" data-close aria-label="Close reveal" type="button">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+
+  <!-- fin modal para login con redes sociales -->
 {% endblock %}
