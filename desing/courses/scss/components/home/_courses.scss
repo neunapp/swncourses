@@ -31,6 +31,7 @@
       color: color(negro);
     }
     &__description{
+      height: 50px;
       font-size: 0.8em;
       color: color(tercero);
     }
@@ -49,6 +50,9 @@
     height: 215px;
   };
   &__nivel{
+    color: color(blanco);
+    width: 80px;
+    text-align: center;
     margin:{
       top: 0.5em;
       left: 1em;
@@ -79,6 +83,10 @@
     font-weight: bold;
     font-family: $font-title;
   }
+  &__etiqueta{
+    color: color(tercero);
+    font-size: 0.8em;
+  }
 }
 
 .teacher{
@@ -87,15 +95,15 @@
 }
 
 .basico {
-  color: color(segundo);
+  background: color(segundo);
 }
 
 .inter{
-  color: #ffeb3b;
+  background: color(primero);
   font-weight: bold;
 }
 
 .avanzado {
-  color: color(primero);
+  background: color(tercero);
   font-weight: bold;
 }

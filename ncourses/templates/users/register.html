@@ -1,0 +1,66 @@
+{% extends "users/base_user.html" %}
+
+{% load  staticfiles %}
+
+{% load thumbnail %}
+
+{% load l10n %}
+
+{% block title %}
+  Ademmy cursos online
+{% endblock %}
+
+{% block description %}
+  Registrate para acceder a cursos de ingenieria
+{% endblock %}
+
+{% block content %}
+  {% include "include/header.html" %}
+  <!--  inicio de formulario de registro  -->
+  <div class="grid-container register-container">
+    <div class="grid-x align-center">
+      <div class="cell small-12 large-8 register-form">
+        <div class="grid-x">
+          <div class="cell small-12 large-8">
+            <form class="grid-x" method="post">{% csrf_token %}
+              <div class="cell small-12 large-8">
+                <label>Correo Electronico:</label>
+                {{form.email}}
+              </div>
+              <div class="cell small-12 large-8">
+                <label>Nombres:</label>
+                {{ form.first_name}}
+              </div>
+              <div class="cell small-12 large-8">
+                <label>Apellidos:</label>
+                {{form.last_name}}
+              </div>
+              <div class="cell small-12 large-8">
+                <label>Contraseña:</label>
+                {{form.password1}}
+              </div>
+              <div class="cell small-12 large-8">
+                <label>Repetir Contraseña:</label>
+                {{form.password2}}
+              </div>
+              <div class="cell small-12 large-8">
+                <div class="grid-x align-center">
+                  <div class="cell shrink">
+                    <input type="submit" name="" class="button" value="Entrar">
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+          <div class="cell small-12 large-4">
+            <div class="register-recomendation">
+              <i class="fa fa-id-card fa-3x" aria-hidden="true"></i>
+              <p class="register-recomendation__text">Para acceder a cualquier curso de Ademmy, ud debe antes registrarse.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--  fin de formulario de registro  -->
+{% endblock %}

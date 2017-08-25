@@ -5,6 +5,7 @@ from django.contrib import admin
 
 # Register your models here.
 
-from .models import Teacher
+from .models import Teacher, User
 
+admin.site.register(User)
 admin.site.register(Teacher)

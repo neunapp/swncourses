@@ -8,6 +8,7 @@ from django.conf.urls.static import static
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     # urls para la aplicacion home
+    url(r'^', include('applications.users.urls', namespace="users_app")),
     url(r'^', include('applications.home.urls', namespace="home_app")),
     url(r'^', include('applications.cursos.urls', namespace="cursos_app")),
     url(r'^', include('applications.topicos.urls', namespace="topicos_app")),

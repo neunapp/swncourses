@@ -1,0 +1,36 @@
+.register-container{
+  background-color:rgba(0,0,0,0.15);
+  height: 90vh;
+  display: flex;
+  align-items: center;
+  @include hasta(1024px){
+    height: auto;
+  };
+}
+
+.register-form {
+  padding: {
+    left: 2em;
+    right: 2em;
+    top: 1em;
+    bottom: 1em;
+  };
+  background:color(blanco);
+}
+
+.register-recomendation{
+  border-left: 2px solid;
+  border-color: rgba(0,0,0,0.15);
+  padding-left: 1em;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;flex-direction: column;
+  color: color(primero);
+  &__text{
+    margin-top: 1em;
+    color: color(tercero);
+    text-align: center;
+  }
+}
