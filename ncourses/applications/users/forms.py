@@ -13,9 +13,10 @@ class LoginForm(forms.Form):
         label='Email',
         max_length='100',
         required=True,
-        widget=forms.TextInput(
+        widget=forms.EmailInput(
             attrs={
                 'placeholder': 'Email',
+                'name':'email',
                 'autofocus': 'autofocus',
             }
         ),

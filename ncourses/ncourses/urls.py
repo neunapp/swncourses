@@ -12,6 +12,7 @@ urlpatterns = [
     url(r'^', include('applications.home.urls', namespace="home_app")),
     url(r'^', include('applications.cursos.urls', namespace="cursos_app")),
     url(r'^', include('applications.topicos.urls', namespace="topicos_app")),
+    url(r'^', include('applications.matriculas.urls', namespace="matriculas_app")),
 
     #
     url(r'^ckeditor/', include('ckeditor_uploader.urls')),

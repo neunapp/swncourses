@@ -1,0 +1,50 @@
+{% extends "matriculas/base_matriculas.html" %}
+
+{% load  staticfiles %}
+
+{% load thumbnail %}
+
+{% load l10n %}
+
+{% block title %}
+  Ademmy cursos online
+{% endblock %}
+
+{% block description %}
+  {{user.first_name}} - {{user.last_name}}
+{% endblock %}
+
+{% block content %}
+  {% include "include/menu.html" %}
+  <!-- Inicio de grid pago -->
+  <div class="grid-container">
+    <div class="grid-x align-center">
+      <div class="cell small-12 large-6 payment-header">
+        <i class="fa fa-smile-o fa-4x" aria-hidden="true"></i>
+        <p class="payment-header__title">{{curso.name}}</p>
+        <p class="payment-header__subtitle">¿dudas? contacta a: ademmy.servicios@gmail.com ó envianos un wasapp a: 985124587</p>
+      </div>
+    </div>
+    <div class="grid-x align-center">
+      <div class="cell small-12 large-6 payment-content">
+        <div class="payment-content__bancos">
+          <h4 class="payment-content__bancos__title">Cuentas bancarias Disponibles</h4>
+          <p class="payment-content__bancos__item">Bcp: 1234569874512</p>
+          <p class="payment-content__bancos__item">Interbanck: 1234569874512</p>
+          <p class="payment-content__bancos__item">otro banco: 1234569874512</p>
+        </div>
+        <div class="payment-content_amount">
+          <p class="payment-content_amount__value">S/. 120.000</p>
+          <p class="payment-content_amount__text">Despues de verificar el deposito se le activara el curso.</p>
+        </div>
+        <form class="payment-content__form" method="post">{% csrf_token %}
+          {{form.banco}}
+          {{form.cod_transaction}}  
+          <input type="submit" class="payment-content__form__submit" value="Verificar">
+        </form>
+      </div>
+    </div>
+  </div>
+  <!-- Fin de grid pago-->
+  </div>
+{% endblock %}

@@ -88,13 +88,13 @@ class Course(TimeStampedModel):
     )
     teacher = models.ForeignKey(
         Teacher,
-        related_name='user_teacher',
+        related_name='userio_profesor',
         blank=True,
         null=True,
     )
-    state = models.BooleanField(default=False)
-    point = models.IntegerField(default=0)
-    visit = models.IntegerField(default=0)
+    state = models.BooleanField('Publicar',default=False)
+    point = models.IntegerField('Puntaje',default=0)
+    visit = models.IntegerField('Visitas',default=0)
     tags = models.ManyToManyField(Tag)
     nivel = models.CharField('Nivel', max_length=1, choices=NIVEL_CHOICES)
     slug = models.SlugField(editable=False, max_length=400)

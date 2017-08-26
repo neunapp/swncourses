@@ -29,6 +29,26 @@
     font-size: 2.5em;
     font-weight: bold;
   }
+  &__registro{
+    font-size: 0.8em;
+    font-weight: bold;
+    color: color(blanco);
+    font-family: $font-title;
+    margin-top: 1.5em;
+    border: solid;
+    padding: {
+      left: 0.5em;
+      right: 0.5em;
+      top: 0.1em;
+      bottom: 0.1em;
+    };
+    border-radius: 15px;
+    background: color(tercero);
+    &:hover{
+      color: color(segundo);
+      background: color(blanco);
+    }
+  }
   &__input{
     display: flex;
     align-items: center;

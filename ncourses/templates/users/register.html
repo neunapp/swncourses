@@ -26,14 +26,23 @@
               <div class="cell small-12 large-8">
                 <label>Correo Electronico:</label>
                 {{form.email}}
+                {% for error in form.email.errors %}
+                  <span style="color:red;">{{ error|escape }}</span>
+                {% endfor %}
               </div>
               <div class="cell small-12 large-8">
                 <label>Nombres:</label>
                 {{ form.first_name}}
+                {% for error in form.first_name.errors %}
+                  <span style="color:red;">{{ error|escape }}</span>
+                {% endfor %}
               </div>
               <div class="cell small-12 large-8">
                 <label>Apellidos:</label>
                 {{form.last_name}}
+                {% for error in form.last_name.errors %}
+                  <span style="color:red;">{{ error|escape }}</span>
+                {% endfor %}
               </div>
               <div class="cell small-12 large-8">
                 <label>Contraseña:</label>
@@ -42,6 +51,9 @@
               <div class="cell small-12 large-8">
                 <label>Repetir Contraseña:</label>
                 {{form.password2}}
+                {% for error in form.password2.errors %}
+                  <span style="color:red;">{{ error|escape }}</span>
+                {% endfor %}
               </div>
               <div class="cell small-12 large-8">
                 <div class="grid-x align-center">

@@ -30,7 +30,7 @@
             <p class="course-price__etiqueta">{{object.get_nivel_display}}</p>
           </div>
           <div class="course-btn">
-            <a href="#" class="course-btn__link" data-open="exampleModal2">COMENZAR CURSO</a>
+            <a href="{% url 'users_app:redirect' object.pk %}" class="course-btn__link">COMENZAR CURSO</a>
           </div>
         </div>
         <div class="cell small-12 large-4 course-video">
@@ -70,11 +70,8 @@
         <div class="course-teacher">
           <h4 class="course-teacher__title">Acerca del Docente</h4>
           <div class="course-teacher__info">
-            <img src="/img/avatar.jpg" alt="" class="course-teacher__info__img">
-            <p class="course-teacher__info__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-              sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-              quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-              Excepteur sint occaecat cupidatat non proident.</p>
+            <img src="{{object.teacher.user.avatar}}" class="course-teacher__info__img">
+            <p class="course-teacher__info__text">{{object.teacher.about}}</p>
           </div>
         </div>
       </div>
@@ -87,38 +84,9 @@
     <div class="grid-x grid-margin-x align-center">
       <div class="cell small-12 course-about">
         <p class="course-about__title">¿Por que llevar el curso?</p>
-        <p class="course-about__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-          tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-          quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-          Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-          Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
-          deserunt mollit anim id est laborum.
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
-          labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
-          nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit
-          esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident,
-          sunt in culpa qui officia deserunt mollit anim id est laborum.
-        </p>
+        <p class="course-about__text">{{object.resume|safe}}</p>
       </div>
     </div>
   </div>
   <!--  fin about -->
-
-
-
-  <!-- modal para login con redes sociales -->
-  <div class="reveal" id="exampleModal2" data-reveal>
-    <div class="grid-container">
-      <div class="grid-x align-center">
-        <h1 class="cell login_title"> Iniciar sesion en Ademmy </h1>
-        <p class="cell login-subtitle">Registrate para poder acceder a los cursos</p>
-        <div class="fb-login-button login-btn" data-width="200" data-max-rows="1" data-size="large" data-button-type="continue_with" data-show-faces="false" data-auto-logout-link="false" data-use-continue-as="true"></div>
-      </div>
-    </div>
-    <button class="close-button" data-close aria-label="Close reveal" type="button">
-      <span aria-hidden="true">&times;</span>
-    </button>
-  </div>
-
-  <!-- fin modal para login con redes sociales -->
 {% endblock %}

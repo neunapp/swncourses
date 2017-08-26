@@ -19,10 +19,16 @@ class Category(TimeStampedModel):
     """ modelo categoria de un curso """
 
     name = models.CharField(
+        'Nombre Largo',
         blank=True,
         max_length=200
     )
-    description = models.TextField(blank=True)
+    name_short = models.CharField(
+        'Nombre Corto',
+        blank=True,
+        max_length=200
+    )
+    description = models.TextField('Descripcion',blank=True)
     slug = models.SlugField(editable=False, max_length=400)
 
     class Meta:

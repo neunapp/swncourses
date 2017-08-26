@@ -18,4 +18,16 @@ urlpatterns = [
         views.LogIn.as_view(),
         name='user-login'
     ),
+    #url para cerrar sesion
+    url(
+        r'^salir/$',
+        views.LogoutView.as_view(),
+        name='logout'
+    ),
+    #url para redireccion
+    url(
+        r'^redirect/(?P<pk>\d+)/$',
+        views.RedirectView.as_view(),
+        name='redirect'
+    ),
 ]

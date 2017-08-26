@@ -7,6 +7,7 @@ from django.views.generic import (
     DeleteView,
     UpdateView,
     ListView,
+    View,
 )
 from django.core.urlresolvers import reverse_lazy, reverse
 from django.http import HttpResponseRedirect

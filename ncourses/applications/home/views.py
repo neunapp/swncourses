@@ -5,12 +5,14 @@ from django.http import HttpResponseRedirect
 from django.views.generic.edit import CreateView
 from django.views.generic import ListView
 
+#mixns
+from applications.mixins import IsAutemticateMixin
 
 #aplicacion cursos
 from applications.cursos.models import Course
 
 
-class IndexView(TemplateView):
+class IndexView(IsAutemticateMixin, TemplateView):
     '''
     Pagina principal mostrar cursos mas visitdos
     '''

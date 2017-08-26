@@ -1,0 +1,77 @@
+{% extends "matriculas/base_matriculas.html" %}
+
+{% load  staticfiles %}
+
+{% load thumbnail %}
+
+{% load l10n %}
+
+{% block title %}
+  Ademmy cursos online
+{% endblock %}
+
+{% block description %}
+  {{user.first_name}} - {{user.last_name}}
+{% endblock %}
+
+{% block content %}
+  {% include "include/menu.html" %}
+  <div class="grid-container">
+    <!-- cursos de usuario -->
+    <div class="user-cursos">
+      <div class="user-cursos__head">
+        <i class="fa fa-play-circle fa-2x" aria-hidden="true"></i>
+        <p class="user-cursos__head__title">Mis cursos</p>
+      </div>
+      <div class="grid-x grid-margin-x user-cursos__items">
+        <div class="cell small-12 medium-4 large-3">
+          <div class="user-cursos__items__card">
+            <img src="{% static 'img/2.jpg' %}" alt="" class="user-cursos__items__card__img">
+            <a class="user-cursos__items__card__name">Programacion con React</a>
+            <p class="user-cursos__items__card__nivel">Intermedio</p>
+          </div>
+        </div>
+        <div class="cell small-12 medium-4 large-3">
+          <div class="user-cursos__items__card">
+            <img src="{% static 'img/q.jpg' %}" alt="" class="user-cursos__items__card__img">
+            <a class="user-cursos__items__card__name">Programacion con React</a>
+            <p class="user-cursos__items__card__nivel">Intermedio</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--  fin de cursos de usuario -->
+
+    <!--  cursos relacionados -->
+    <div class="user-relation-courses">
+      <div class="relation-courses__head">
+        <i class="fa fa-wpexplorer fa-2x" aria-hidden="true"></i>
+        <p class="user-cursos__head__title">Tambien podrian interesarte estos cursos</p>
+      </div>
+      <div class="grid-x grid-margin-x relation-courses__items">
+        <div class="cell small-12 medium-4 large-3">
+          <div class="user-cursos__items__card">
+            <img src="{% static 'img/i1.jpg' %}" alt="" class="relation-courses__img">
+            <a class="relation-courses__name">Programacion con React</a>
+            <p class="relation-courses__nivel">Intermedio</p>
+          </div>
+        </div>
+        <div class="cell small-12 medium-4 large-3">
+          <div class="user-cursos__items__card">
+            <img src="{% static 'img/i2.jpg' %}" alt="" class="relation-courses__img">
+            <a class="relation-courses__name">Programacion con React</a>
+            <p class="relation-courses__nivel">Intermedio</p>
+          </div>
+        </div>
+        <div class="cell small-12 medium-4 large-3">
+          <div class="user-cursos__items__card">
+            <img src="{% static 'img/2.jpg' %}" alt="" class="relation-courses__img">
+            <a class="relation-courses__name">Programacion con React</a>
+            <p class="relation-courses__nivel">Intermedio</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--  fin cursos relacionados -->
+  </div>
+{% endblock %}
