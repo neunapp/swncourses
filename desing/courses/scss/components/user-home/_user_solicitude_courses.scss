@@ -1,0 +1,27 @@
+.courses-solicitude {
+  padding: 1em;
+  margin-bottom: 2em;
+  &__item{
+    margin: 0.2em;
+    background: color(tercero);
+    color: color(blanco);
+    padding: {
+      top: 0.5em;
+      bottom: 0.5em;
+      right: 1em;
+      left: 1em;
+    };
+    border-radius: 20px;
+    &:hover{
+      background: #444;
+      color: color(blanco);
+    }
+    &__link{
+      color: color(blanco);
+      &:hover{
+        background: #444;
+        color: color(blanco);
+      }
+    }
+  }
+}

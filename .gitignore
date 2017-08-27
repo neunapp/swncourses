@@ -90,11 +90,11 @@ ENV/
 
 # Secrect json
 
-ncourses/secrets.json
+#ncourses/secrets.json
 
-#ncourses/napendice/wsgi.py
+#ncourses/ncourses/wsgi.py
 
-#ncourses/napendice/settings/prod.py
+#ncourses/ncourses/settings/prod.py
 
 #ncourses/manage.py
 
