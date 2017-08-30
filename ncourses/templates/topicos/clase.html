@@ -17,12 +17,12 @@
 {% block content %}
   {% include "include/menu.html" %}
   <div class="grid-x clase-head">
-    <h1 class="clase-head__title">{{curso.name}}: Presentacion del curso</h1>
+    <h1 class="clase-head__title">{{curso.name}} : {{object.name}}</h1>
   </div>
   <div class="grid-container">
     <div class="grid-x">
       <div class="cell small-12 large-8 clase-video">
-        <iframe class="clase-video__frame"src="{{curso.video}}" frameborder="0" allowfullscreen></iframe>
+        <iframe class="clase-video__frame"src="{{object.url_video}}" frameborder="0" allowfullscreen></iframe>
       </div>
       <div class="cell small-12 large-4 large-cell-block-y clase-list">
         <p class="clase-list__title">Videos del curso</p>
@@ -39,8 +39,8 @@
       </div>
     </div>
     <div class="callout clase-description">
-      <h4 class="clase-description__title">¿De que hablamos en el curso?</h4>
-      <p class="clase-description__content">{{curso.description_short}}</p>
+      <h4 class="clase-description__title">¿De que hablamos en esta clase?</h4>
+      <p class="clase-description__content">{{object.description}}</p>
     </div>
   </div>
 {% endblock %}

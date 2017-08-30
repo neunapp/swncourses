@@ -130,7 +130,9 @@ class RedirectView(LoginRequiredMixin, View):
             return HttpResponseRedirect(
                 reverse(
                     'matriculas_app:matricula-preinscripcion',
-                    kwargs={'pk': curso.pk },
+                    kwargs={
+                        'pk': curso.pk
+                    },
                 )
             )
 

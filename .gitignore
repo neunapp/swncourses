@@ -90,13 +90,13 @@ ENV/
 
 # Secrect json
 
-#ncourses/secrets.json
+ncourses/secrets.json
 
-#ncourses/ncourses/wsgi.py
+ncourses/ncourses/wsgi.py
 
 #ncourses/ncourses/settings/prod.py
 
-#ncourses/manage.py
+ncourses/manage.py
 
 *migrations/*
 !__init__.py

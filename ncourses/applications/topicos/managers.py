@@ -10,7 +10,7 @@ class TopicosManager(Manager):
 
     def list_by_course(self, slug):
         '''
-        recuperar los cursos mas visitados
+        recuperar los temas de un curso
         '''
         return self.filter(
             course__slug=slug,

@@ -18,6 +18,9 @@ from django.db.models.signals import post_save
 #app Cursos
 from applications.cursos.models import Course
 
+#local
+from .managers import RegistrationManager
+
 
 @python_2_unicode_compatible
 class Banco(TimeStampedModel):
@@ -43,7 +46,7 @@ class Registration(TimeStampedModel):
 
     course = models.ForeignKey(
         Course,
-        related_name='matricula_curso'
+        related_name='matricula_curso',
     )
     user = models.ForeignKey(
         settings.AUTH_USER_MODEL,
@@ -51,6 +54,7 @@ class Registration(TimeStampedModel):
         editable=False,
     )
     amount = models.DecimalField(
+        'monto',
         max_digits=10,
         decimal_places=3,
         default=0,
@@ -86,7 +90,7 @@ class Registration(TimeStampedModel):
         editable=False,
     )
 
-    #objects = RegistrationManager()
+    objects = RegistrationManager()
 
     class Meta:
         unique_together = ("course", "user")
@@ -103,7 +107,7 @@ class Registration(TimeStampedModel):
         curso = self.course
         self.amount = curso.price
         #verificamos si se activo
-        if self.activate:
-            self.user_activate = self.request.user
+        # if self.activate:
+        #     self.user_activate = self.request.user
 
         super(Registration, self).save(*args, **kwargs)

@@ -17,6 +17,22 @@
 {% block content %}
   {% include "include/menu.html" %}
   <div class="grid-container">
+    <!-- cursos que tienen solicitud pendiente -->
+    <div class="courses-solicitude">
+      <div class="user-cursos__head">
+        <i class="fa fa-pencil-square-o fa-2x" aria-hidden="true"></i>
+        <p class="user-cursos__head__title">Cursos que solicite inscripcion</p>
+      </div>
+      <div class="grid-x">
+        {% for pc in pendiente_courses  %}
+        <div class="cell shrink courses-solicitude__item">
+          <a href="{% url 'users_app:redirect' pc.course.pk %}" class="courses-solicitude__item__link">{{pc.course.name}}</a>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+    <!-- fin cursos que tienen solicitud pendiente -->
+
     <!-- cursos de usuario -->
     <div class="user-cursos">
       <div class="user-cursos__head">
@@ -24,20 +40,17 @@
         <p class="user-cursos__head__title">Mis cursos</p>
       </div>
       <div class="grid-x grid-margin-x user-cursos__items">
-        <div class="cell small-12 medium-4 large-3">
-          <div class="user-cursos__items__card">
-            <img src="{% static 'img/2.jpg' %}" alt="" class="user-cursos__items__card__img">
-            <a class="user-cursos__items__card__name">Programacion con React</a>
-            <p class="user-cursos__items__card__nivel">Intermedio</p>
+        {% for mc in my_courses %}
+          <div class="cell small-12 medium-4 large-3">
+            <div class="user-cursos__items__card">
+              <img src="{{mc.course.image.url}}" alt="" class="user-cursos__items__card__img">
+              <a href="{% url 'topicos_app:topicos-by_course' mc.course.category.slug mc.course.slug %}" class="user-cursos__items__card__name">{{mc.course.name}}</a>
+              <p class="user-cursos__items__card__nivel">{{mc.course.get_nivel_display}}</p>
+            </div>
           </div>
-        </div>
-        <div class="cell small-12 medium-4 large-3">
-          <div class="user-cursos__items__card">
-            <img src="{% static 'img/q.jpg' %}" alt="" class="user-cursos__items__card__img">
-            <a class="user-cursos__items__card__name">Programacion con React</a>
-            <p class="user-cursos__items__card__nivel">Intermedio</p>
-          </div>
-        </div>
+        {% empty %}
+          <a href="{% url 'cursos_app:course-search' 'todos' %}" class="user-cursos__head__title">Aun no titne cursos, puede buscar cursos ...</a>
+        {% endfor %}
       </div>
     </div>
     <!--  fin de cursos de usuario -->
@@ -49,27 +62,21 @@
         <p class="user-cursos__head__title">Tambien podrian interesarte estos cursos</p>
       </div>
       <div class="grid-x grid-margin-x relation-courses__items">
-        <div class="cell small-12 medium-4 large-3">
-          <div class="user-cursos__items__card">
-            <img src="{% static 'img/i1.jpg' %}" alt="" class="relation-courses__img">
-            <a class="relation-courses__name">Programacion con React</a>
-            <p class="relation-courses__nivel">Intermedio</p>
+        {% for rc  in relation_courses  %}
+          <div class="cell small-12 medium-4 large-3">
+            <div class="user-cursos__items__card">
+              <img src="{{rc.image.url}}" alt="" class="relation-courses__img">
+              <a href="{% url 'cursos_app:course-detail' rc.category.slug rc.slug %}" class="relation-courses__name">{{rc.name}}</a>
+              {% if rc.nivel == '0' %}
+                <p class="course-card__etiqueta__nivel basico">Basico</p>
+              {% elif rc.nivel == '1' %}
+                <p class="course-card__etiqueta__nivel inter">Intermedio</p>
+              {% else %}
+                <p class="course-card__etiqueta__nivel avanzado">Avanzado</p>
+              {% endif %}
+            </div>
           </div>
-        </div>
-        <div class="cell small-12 medium-4 large-3">
-          <div class="user-cursos__items__card">
-            <img src="{% static 'img/i2.jpg' %}" alt="" class="relation-courses__img">
-            <a class="relation-courses__name">Programacion con React</a>
-            <p class="relation-courses__nivel">Intermedio</p>
-          </div>
-        </div>
-        <div class="cell small-12 medium-4 large-3">
-          <div class="user-cursos__items__card">
-            <img src="{% static 'img/2.jpg' %}" alt="" class="relation-courses__img">
-            <a class="relation-courses__name">Programacion con React</a>
-            <p class="relation-courses__nivel">Intermedio</p>
-          </div>
-        </div>
+        {% endfor %}
       </div>
     </div>
     <!--  fin cursos relacionados -->

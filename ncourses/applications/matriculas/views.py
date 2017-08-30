@@ -25,6 +25,17 @@ from .models import Registration
 class DashboarUserView(TemplateView):
     template_name = 'matriculas/index.html'
 
+    def get_context_data(self, **kwargs):
+        context = super(DashboarUserView, self).get_context_data(**kwargs)
+        context['pendiente_courses'] = Registration.objects.pendiente_courses_by_user(
+            self.request.user
+        )
+        context['my_courses'] = Registration.objects.courses_by_user(
+            self.request.user
+        )
+        context['relation_courses'] = Course.objects.other_courses()
+        return context
+
 
 class PreRegistrationView(FormView):
     """ vista que registra el codigo de deposito de una matricula """

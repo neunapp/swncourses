@@ -12,4 +12,10 @@ urlpatterns = [
         views.TopicoByCourseView.as_view(),
         name='topicos-by_course'
     ),
+    # urls para ver una clase
+    url(
+        r'^cursos-clase/(?P<pk>\d+)/(?P<curso>\d+)/$',
+        views.TopicoDetailView.as_view(),
+        name='topicos-clase_view'
+    ),
 ]

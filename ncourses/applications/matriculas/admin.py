@@ -8,18 +8,30 @@ from applications.cursos.models import Course
 # models
 from .models import Banco, Registration
 
+
 #registro desde admin
+#personalizamos la columna course
+def course(obj):
+    return obj.course.name
+course.short_description = 'Curso'
+
+#personalizamos la columna user
+def user(obj):
+    return obj.user.email
+user.short_description = 'Alumno'
+
 class RegistrationAdmin(admin.ModelAdmin):
     list_display = (
-        'course',
-        'user',
+        course,
+        user,
         'amount',
         'banco',
         'cod_transaction',
+        'activate',
         'pk',
     )
+    course.short_description = 'Curso'
     search_fields = ('user', 'cod_transaction')
-    list_filter = ('course','user',)
     readonly_fields=('user',)
     fields = (
         'course',
@@ -33,7 +45,7 @@ class RegistrationAdmin(admin.ModelAdmin):
         'anulate',
     )
     #
-    list_filter = ('course__name',)
+    list_filter = ('course__name','activate','created')
     raw_id_admin = ('course', )
     # def render_change_form(self, request, context, *args, **kwargs):
     #      context['adminform'].form.fields['course'].queryset = Course.objects.filter(name__iexact='company')

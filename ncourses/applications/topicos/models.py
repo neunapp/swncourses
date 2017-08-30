@@ -33,30 +33,22 @@ class Topico(TimeStampedModel):
         blank=True,
         max_length=100
     )
+    url_video = models.URLField(blank=True)
 
     objects = TopicosManager()
 
     class Meta:
-        verbose_name = 'Tema'
-        verbose_name_plural = 'Temas'
+        verbose_name = 'Clase'
+        verbose_name_plural = 'Clases'
 
     def __str__(self):
         return self.name
 
 
-@python_2_unicode_compatible
-class Video(TimeStampedModel):
-    """ Almacena url de video """
-
-    url_video = models.URLField(blank=True)
-    minutes = models.CharField(
-        blank=True,
-        max_length=10
-    )
-
-    class Meta:
-        verbose_name = 'Video'
-        verbose_name_plural = 'Videos'
-
-    def __str__(self):
-        return self.minutes
+    #funcion que se ejecuta al guardar
+    def save(self, *args, **kwargs):
+        #cambiammos el formato de video
+        video = self.url_video.split('/')
+        self.url_video = "https://www.youtube.com/embed/"+video[3]
+        #
+        super(Topico, self).save(*args, **kwargs)

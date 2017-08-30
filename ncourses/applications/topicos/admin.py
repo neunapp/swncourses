@@ -4,26 +4,17 @@ from __future__ import unicode_literals
 from django.contrib import admin
 
 #model
-from .models import Topico, Video
+from .models import Topico
 
 class TopicoAdmin(admin.ModelAdmin):
     list_display = (
+        'course',
         'name',
-        'description',
-        'minutes',
-        'pk',
-    )
-    search_fields = ('name', 'description')
-
-admin.site.register(Topico, TopicoAdmin)
-
-
-class VideoAdmin(admin.ModelAdmin):
-    list_display = (
         'url_video',
         'minutes',
         'pk',
     )
-    search_fields = ('url_video',)
+    search_fields = ('name', 'description')
+    list_filter = ('course',)
 
-admin.site.register(Video, VideoAdmin)
+admin.site.register(Topico, TopicoAdmin)
