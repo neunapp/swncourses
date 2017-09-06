@@ -1,0 +1,96 @@
+{% extends "users/base_user.html" %}
+
+{% load  staticfiles %}
+
+{% load thumbnail %}
+
+{% load l10n %}
+
+{% block title %}
+  Ademmy cursos online
+{% endblock %}
+
+{% block description %}
+  Registrate para acceder a cursos de ingenieria
+{% endblock %}
+
+{% block content %}
+  {% include "include/header.html" %}
+  <!--  inicio de formulario de registro  -->
+  <div class="grid-container register-container">
+    <div class="grid-x align-center">
+      <div class="cell small-12 large-10 register-form">
+        <div class="grid-x">
+          <div class="cell small-12 large-8">
+            <form class="grid-x grid-margin-x" method="post">{% csrf_token %}
+              <div class="cell small-12 large-5">
+                <label>Correo Electronico:</label>
+                {{form.email}}
+                {% for error in form.email.errors %}
+                  <span style="color:red;">{{ error|escape }}</span>
+                {% endfor %}
+              </div>
+              <div class="cell small-12 large-5">
+                <label>Sus nombres:</label>
+                {{form.full_name}}
+                {% for error in form.full_name.errors %}
+                  <span style="color:red;">{{ error|escape }}</span>
+                {% endfor %}
+              </div>
+              <div class="cell small-12 large-5">
+                <label>Telefonos/Cellular:</label>
+                {{form.phone}}
+                {% for error in form.phone.errors %}
+                  <span style="color:red;">{{ error|escape }}</span>
+                {% endfor %}
+              </div>
+              <div class="cell small-12 large-5">
+                <label>Paiz:</label>
+                {{form.contry}}
+                {% for error in form.contry.errors %}
+                  <span style="color:red;">{{ error|escape }}</span>
+                {% endfor %}
+              </div>
+              <div class="cell small-12 large-5">
+                <label>Ciudad:</label>
+                {{form.city}}
+                {% for error in form.city.errors %}
+                  <span style="color:red;">{{ error|escape }}</span>
+                {% endfor %}
+              </div>
+              <div class="cell small-12 large-5">
+                <label>Perfil facebook:</label>
+                {{form.url_facebook}}
+                {% for error in form.url_facebook.errors %}
+                  <span style="color:red;">{{ error|escape }}</span>
+                {% endfor %}
+              </div>
+              <div class="cell small-12 large-11">
+                <label>Sobre su trabajo:</label>
+                {{form.speciality}}
+                {% for error in form.speciality.errors %}
+                  <span style="color:red;">{{ error|escape }}</span>
+                {% endfor %}
+              </div>
+
+              <div class="cell small-12 large-8">
+                <div class="grid-x align-center">
+                  <div class="cell shrink">
+                    <input type="submit" class="button" value="Enviar">
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+          <div class="cell small-12 large-4">
+            <div class="register-recomendation">
+              <i class="fa fa-handshake-o fa-3x" aria-hidden="true"></i>
+              <p class="register-recomendation__text">Envienos sus datos para entrar en contacto con Ud.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--  fin de formulario de registro  -->
+{% endblock %}

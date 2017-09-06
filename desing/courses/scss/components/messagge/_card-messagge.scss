@@ -1,0 +1,52 @@
+.menssagge-main{
+  width: 100%;
+  height: 90vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 2em;
+}
+
+.card-menssagge{
+  background: #EEEEEE;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid;
+  border-color: color(tercero);
+  width: 600px;
+  height: 300px;
+  &__img{
+    width: 250px;
+    height: 250px;
+    @include hasta(640px){
+      display: none
+    };
+  }
+}
+
+.card-menssagge__content {
+  color: color(tercero);
+  font-family: $font-title;
+  padding: 1em;
+  &__title{
+    font-size: 1.5em;
+    font-weight: bold;
+  }
+  &__btn{
+    background: color(primero);
+    color: color(blanco);
+    border-radius: 5px;
+    padding: {
+      top: 0.5em;
+      bottom: 0.5em;
+      left: 1.5em;
+      right: 1.5em;
+    };
+    &:hover{
+      color: color(blanco);
+      background: color(tercero);
+    }
+  }
+}

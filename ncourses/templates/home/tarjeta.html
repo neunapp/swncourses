@@ -1,0 +1,33 @@
+{% extends "users/base_user.html" %}
+
+{% load  staticfiles %}
+
+{% load thumbnail %}
+
+{% load l10n %}
+
+{% block title %}
+  Ademmy cursos online
+{% endblock %}
+
+{% block description %}
+  Registrate para acceder a cursos de ingenieria
+{% endblock %}
+
+{% block content %}
+  {% include "include/header.html" %}
+
+  <!-- inicio de tarjeta-->
+  <div class="menssagge-main">
+    <div class="card-menssagge">
+      <img src="{% static 'img/contacto.png' %}" alt="imagen" class="card-menssagge__img">
+      <div class="card-menssagge__content">
+        <h3 class="card-menssagge__content__title">Bienvenido a ademmy</h3>
+        <p class="card-menssagge__content__text">Hemos resivido su solicitud, pronto estaremos en contacto contigo, no olvides revisar tu bandeja de correo</p>
+        <a href="{% url 'cursos_app:course-search' 'todos' %}" class="card-menssagge__content__btn">ir a los cursos</a>
+      </div>
+    </div>
+  </div>
+  <!-- fin de tarjeta-->
+
+{% endblock %}
