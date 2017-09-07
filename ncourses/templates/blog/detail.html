@@ -1,0 +1,47 @@
+{% extends "blog/base_blog.html" %}
+
+{% load  staticfiles %}
+
+{% load thumbnail %}
+
+{% load l10n %}
+
+{% block title %}
+  Tutoriales sobre ingenieria
+{% endblock %}
+
+{% block description %}
+  enuentra articulos y tutoriales de ingeniria
+{% endblock %}
+
+{% block content %}
+  {% include "include/header.html" %}
+
+  <div class="grid-container blog-detail">
+    <!-- imagen de autor-->
+    <div class="blog-detail__user">
+      <img src="{% static 'img/avatar.jpg' %}" alt="" class="blog-detail__user__img">
+      <div class="blog-detail__user__description">
+        <p class="blog-detail__user__description__name">{{object.author}}</p>
+        <p class="blog-detail__user__description__city">{{object.category}}</p>
+        <p class="blog-detail__user__description__date">{{object.created|date}}</p>
+      </div>
+    </div>
+    <!-- fin de imagen de author -->
+
+    <div class="grid-x align-left">
+      <h1 class="blog-detail__title">{{object.title}}</h1>
+      <!-- inicio banner blog -->
+      <div class="blog-detail__banner">
+        <p class="blog-detail__banner__resume">
+          {{object.description}}
+        </p>
+      </div>
+      <!-- fin banner blog -->
+      <p class="blog-detail__text">
+        {{object.content|safe}}
+      </p>
+    </div>
+  </div>
+
+{% endblock %}

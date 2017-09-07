@@ -1,0 +1,50 @@
+.blog-detail{
+  padding: 4em;
+  &__title{
+    font-size: 2.5em;
+    text-align: center;
+    margin-bottom: 0.5em;
+    font-family: $font-text;
+  }
+  &__text{
+    font-family: $font-text;
+    color: #424242;
+    font-weight: lighter;
+  }
+}
+
+.blog-detail__user {
+  display: flex;
+  align-items: center;
+  width: 450px;
+  padding: 0.5em;
+  &__img{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 0.5em;
+  }
+  &__description{
+    color: color(tercero);
+    font-family: $font-title;
+    font-size: 0.7em;
+    &__name{
+      margin: 0px;
+      font-weight: bold;
+    }
+    &__city{
+      margin: 0px;
+    }
+  }
+}
+
+.blog-detail__banner{
+  border: 1px solid;
+  padding: 1em;
+  border-color: #e0e0e0;
+  text-align: center;
+  color: color(tercero);
+  font-family: $font-text;
+  width: 100%;
+  margin-bottom: 0.5em;
+}

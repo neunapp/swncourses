@@ -1,0 +1,46 @@
+{% extends "blog/base_blog.html" %}
+
+{% load  staticfiles %}
+
+{% load thumbnail %}
+
+{% load l10n %}
+
+{% block title %}
+  Tutoriales sobre ingenieria
+{% endblock %}
+
+{% block description %}
+  enuentra articulos y tutoriales de ingeniria
+{% endblock %}
+
+{% block content %}
+  {% include "include/header.html" %}
+
+  <!--  Inicio de titulo blog -->
+  <div class="grid-container blog-index">
+    <h1 class="blog-index__title">Nuestros Articulos mas populares</h1>
+    <p class="blog-index__subtitle">Encuentra los mejores tutoriales y articulos sobre cursos y temas de ingenieria</p>
+    <div class="grid-x grid-margin-x align-center">
+      {% for b in blogs %}
+        <div class="cell small-12 medium-6 large-4">
+          <div class="blog-index-card">
+            <img src="{{b.image.url}}" alt="fotos-de-ingenieria" class="blog-index-card__img">
+            <div class="blog-index-card__content">
+              <h4 class="blog-index-card__content__title">{{b.title}}</h4>
+              <div class="blog-index-card__content__description">
+                <div class="blog-index-card__content__description__item">
+                  <p class="blog-index-card__content__description__item__category">{{b.category}}</p>
+                  <p class="blog-index-card__content__description__item__author">{{b.author}}</p>
+                </div>
+                <a href="{% url 'blog_app:blog-detail' b.slug %}" class="blog-index-card__content__description__btn">Ver más</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+  <!--  Fin de titulo blog -->
+
+{% endblock %}
